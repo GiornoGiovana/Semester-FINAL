@@ -1,0 +1,8 @@
+import java.awt.Color;
+
+
+public class LevelBlock {
+	private boolean transparent;
+	private Color color;
+
+}
