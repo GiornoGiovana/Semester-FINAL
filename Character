@@ -1,0 +1,28 @@
+import java.awt.Graphics;
+
+
+public class Character {
+	private int health;
+	private int speed;
+	private Graphics charGraphica;
+	private boolean canAttackEnemy;
+	
+	Character(int hp, int sp, Graphics graphic, boolean canAttack){
+		health = hp;
+		speed = sp;
+		charGraphica = graphic;
+		canAttackEnemy = canAttack;
+	}
+	public void setHealth(int h){
+		health = h;
+	}
+	public int getHealth(){
+		return health;
+	}
+	public void setSpeed(int s){
+		speed = s;
+	}
+	public int getSpeed(){
+		return speed;
+	}
+}
