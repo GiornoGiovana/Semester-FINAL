@@ -1,0 +1,19 @@
+
+public class Weapon {
+	private int attackPower;
+	private boolean isMelee;
+	private Double projectileSpeed;
+	
+	
+	Weapon (int aP, boolean melee, double pS){
+		attackPower = aP;
+		isMelee = melee;
+		projectileSpeed = pS;
+	}
+	public void setAttackPower(int aP){
+		attackPower = aP;
+	}
+	public int getAttackPower(){
+		return attackPower;
+	}
+}
