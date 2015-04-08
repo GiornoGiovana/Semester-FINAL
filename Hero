@@ -1,4 +1,19 @@
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 
 public class Hero {
-
+	Character hero;
+	Weapon weapon;
+	private int health;
+	private int speed;
+	private Graphics charGraphic;
+	private boolean canAttackEnemy;
+	private int dx;
+	private int dy;
+	private int x;
+	private int y;
+	public void attack(){
+		
+	}
 }
