@@ -1,4 +1,11 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class Enemy {
-
+public class Board extends JPanel {     // main class for the game   
+	// Define constants for the game
+	static final String TITLE = "Blaze";        // title of the game
+	static final int CANVAS_WIDTH = 800;    // width and height of the drawing canvas
+	static final int CANVAS_HEIGHT = 600;
+	
 }
