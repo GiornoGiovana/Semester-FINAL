@@ -1,19 +1,37 @@
+import javax.swing.*;
+import java.awt.*;
 
 public class Weapon {
 	private int attackPower;
 	private boolean isMelee;
 	private Double projectileSpeed;
+	private Graphics weaponGraphic;
+	// Character wieldingCharacter;
 	
 	
-	Weapon (int aP, boolean melee, double pS){
+	Weapon(int aP, boolean melee, Double pS, Character c) {
 		attackPower = aP;
 		isMelee = melee;
 		projectileSpeed = pS;
+		//wieldingCharacter = c;
 	}
-	public void setAttackPower(int aP){
+	public void setAttackPower(int aP) {
 		attackPower = aP;
 	}
-	public int getAttackPower(){
+	public int getAttackPower() {
 		return attackPower;
+	}
+	public boolean isMelee() {
+		return isMelee;
+	}
+	//use shapes like rectangles to find collisions
+	public void dealDamage(boolean canAttack, Board b) {
+		for(int i = 0; i < b.getEnemies().size(); i++) {
+			Enemy e = (Enemy) b.getEnemies().get(i);
+			int enemyHealth = e.getHealth();
+			if(weaponGraphic.contains(b.getEnemies().get(i))) {
+				e.setHealth(enemyHealth - 1);
+			}
+		}		
 	}
 }
