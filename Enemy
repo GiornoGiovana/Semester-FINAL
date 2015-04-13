@@ -1,11 +1,18 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Graphics;
+import java.util.*;
 
-public class Board extends JPanel {     // main class for the game   
-	// Define constants for the game
-	static final String TITLE = "Blaze";        // title of the game
-	static final int CANVAS_WIDTH = 800;    // width and height of the drawing canvas
-	static final int CANVAS_HEIGHT = 600;
+public class Enemy extends Character {
+
+	private ArrayList enemyList;
 	
+	
+	Enemy(int hp, int sp, Graphics graphic, boolean canAttack, String charType, Board b) {
+		super(hp, sp, graphic, canAttack, charType);
+		b.addEnemy(this);
+		// TODO Auto-generated constructor stub
+	}
+//	public ArrayList getEnemies() {
+//		return enemyList;
+//	}
+
 }
