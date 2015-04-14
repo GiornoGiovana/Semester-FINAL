@@ -6,13 +6,10 @@ public class Enemy extends Character {
 	private ArrayList enemyList;
 	
 	
-	Enemy(int hp, int sp, Graphics graphic, boolean canAttack, String charType, Board b) {
-		super(hp, sp, graphic, canAttack, charType);
+	Enemy(int hp, int sp, Graphics graphic, boolean canAttack, String charType, Board b, int x, int y, int w, int h) {
+		super(hp, sp, graphic, canAttack, charType, x, y, w, h);
 		b.addEnemy(this);
 		// TODO Auto-generated constructor stub
 	}
-//	public ArrayList getEnemies() {
-//		return enemyList;
-//	}
 
 }
