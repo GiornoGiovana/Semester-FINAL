@@ -1,19 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.*;
 
 public class Weapon {
 	private int attackPower;
 	private boolean isMelee;
 	private Double projectileSpeed;
 	private Graphics weaponGraphic;
+	private int xHitBox;
+	private int yHitBox;
+	private int width;
+	private int height;
+	private Rectangle2D weaponHitBox;
 	// Character wieldingCharacter;
 	
 	
-	Weapon(int aP, boolean melee, Double pS, Character c) {
+	Weapon(int aP, boolean melee, Double pS, int x, int y, int w, int h) {
 		attackPower = aP;
 		isMelee = melee;
 		projectileSpeed = pS;
+		weaponHitBox = new Rectangle2D.Double(x,y,w,h);
 		//wieldingCharacter = c;
+	}
+	public int[] getWeaponHitBox() {
+		return new int[] {(int) weaponHitBox.getX(), (int) weaponHitBox.getY(), (int) weaponHitBox.getWidth(), (int) weaponHitBox.getHeight()};
 	}
 	public void setAttackPower(int aP) {
 		attackPower = aP;
@@ -26,10 +36,21 @@ public class Weapon {
 	}
 	//use shapes like rectangles to find collisions
 	public void dealDamage(boolean canAttack, Board b) {
+		int x = 0, y = 0, w = 0, h = 0;
 		for(int i = 0; i < b.getEnemies().size(); i++) {
 			Enemy e = (Enemy) b.getEnemies().get(i);
 			int enemyHealth = e.getHealth();
-			if(weaponGraphic.contains(b.getEnemies().get(i))) {
+			for(int z = 0; z < e.getCharHitBox().length; z++) {
+				if(z == 0)
+					x=e.getCharHitBox()[z];
+				if(z == 1)
+					y=e.getCharHitBox()[z];
+				if(z == 2)
+					w=e.getCharHitBox()[z];
+				if(z == 3)
+					h=e.getCharHitBox()[z];
+			}
+			if(weaponHitBox.intersects(x,y,w,h)) {
 				e.setHealth(enemyHealth - 1);
 			}
 		}		
