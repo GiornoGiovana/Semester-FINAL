@@ -1,23 +1,38 @@
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.geom.*;
 
 
 public class Character {
 	private int health;
 	private int speed;
-	private Graphics charGraphica;
+	private Graphics charGraphics;
 	private boolean canAttackEnemy;
+	private String charType;
+	private int xHitBox;
+	private int yHitBox;
+	private int hitBoxWidth;
+	private int hitBoxHeight;
+	private Rectangle2D charHitBox;
 	
-	Character(int hp, int sp, Graphics graphic, boolean canAttack){
+	public Character(int hp, int sp, Graphics graphic, boolean canAttack, String type, int x, int y, int w, int h) {
 		health = hp;
 		speed = sp;
-		charGraphica = graphic;
+		charGraphics = graphic;
 		canAttackEnemy = canAttack;
+		setCharType(type);
+		charHitBox = new Rectangle2D.Double(x,y,w,h);
+	}
+	public int[] getCharHitBox() {
+		return new int[] {(int) charHitBox.getX(), (int) charHitBox.getY(), (int) charHitBox.getWidth(), (int) charHitBox.getHeight()};
 	}
 	public void setHealth(int h){
 		health = h;
 	}
 	public int getHealth(){
 		return health;
+	}
+	public Graphics charGraphics() {
+		return charGraphics;
 	}
 	public void hit(int hit){
 		health = health - hit;
@@ -28,4 +43,14 @@ public class Character {
 	public int getSpeed(){
 		return speed;
 	}
+	public boolean canAttack() {
+		return canAttackEnemy;
+	}
+	public String getCharType() {
+		return charType;
+	}
+	public void setCharType(String charType) {
+		this.charType = charType;
+	}
+	
 }
