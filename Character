@@ -1,12 +1,4 @@
-import java.awt.*;
-import java.awt.geom.*;
-
-
-public class Character {
-	private int health;
-	private int speed;
-	private Graphics charGraphics;
-	private boolean canAttackEnemy;
+private boolean canAttackEnemy;
 	private String charType;
 	private int xHitBox;
 	private int yHitBox;
@@ -51,6 +43,11 @@ public class Character {
 	}
 	public void setCharType(String charType) {
 		this.charType = charType;
+	}
+	public boolean isDead() {
+		if(getHealth() <= 0)
+			return true;
+		return false;
 	}
 	
 }
