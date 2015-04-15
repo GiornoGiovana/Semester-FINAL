@@ -35,20 +35,20 @@ public class Weapon {
 		return isMelee;
 	}
 	//use shapes like rectangles to find collisions
-	public void dealDamage(boolean canAttack, Board b) {
+	public void dealDamage(Board b) {
 		int x = 0, y = 0, w = 0, h = 0;
 		for(int i = 0; i < b.getEnemies().size(); i++) {
 			Enemy e = (Enemy) b.getEnemies().get(i);
 			int enemyHealth = e.getHealth();
 			for(int z = 0; z < e.getCharHitBox().length; z++) {
 				if(z == 0)
-					x=e.getCharHitBox()[z];
+					x = e.getCharHitBox()[z];
 				if(z == 1)
-					y=e.getCharHitBox()[z];
+					y = e.getCharHitBox()[z];
 				if(z == 2)
-					w=e.getCharHitBox()[z];
+					w = e.getCharHitBox()[z];
 				if(z == 3)
-					h=e.getCharHitBox()[z];
+					h = e.getCharHitBox()[z];
 			}
 			if(weaponHitBox.intersects(x,y,w,h)) {
 				e.setHealth(enemyHealth - 1);
