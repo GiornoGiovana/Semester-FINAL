@@ -1,0 +1,28 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.util.LinkedList;
+
+
+public class Block extends GameObject {
+
+	public Block(float x, float y, ObjectId id){
+		super(x,y,id);
+	}
+	public void tick(LinkedList<GameObject> object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.white);
+		g.drawRect((int)x ,(int) y, 32, 32);
+	}
+
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return new Rectangle((int)x, (int)y, 32,32);
+	}
+
+}
