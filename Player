@@ -9,7 +9,7 @@ public class Player extends GameObject{
 
 	private float width = 32, height = 64;
 
-	private float gravity = .5f;
+	private float gravity = .4f;
 
 	private final float MAX_SPEED = 10;
 
@@ -37,18 +37,9 @@ public class Player extends GameObject{
 		for(int c = 0; c< handler.object.size(); c++){
 			GameObject tempObject = handler.object.get(c);
 			if(tempObject.getId() == ObjectId.Block){
-				if(getBoundsRight().intersects(tempObject.getBounds())){
-					x = (float) (tempObject.getX() - tempObject.getBounds().getWidth());
-
-				}
-				if(getBoundsLeft().intersects(tempObject.getBounds())){
-					x = (float) (tempObject.getX() + tempObject.getBounds().getWidth());
-				}
 				if(getBoundsTop().intersects(tempObject.getBounds())){
-					y = tempObject.getY();
+					y = tempObject.getY() + 32;
 					velY = 0;
-					falling = false;
-					jumping = false;
 				}
 				else{
 					falling = true;
@@ -64,6 +55,13 @@ public class Player extends GameObject{
 					falling = true;
 
 				}
+				if(getBoundsRight().intersects(tempObject.getBounds())){
+					x = (float) (tempObject.getX() - tempObject.getBounds().getWidth());
+
+				}
+				if(getBoundsLeft().intersects(tempObject.getBounds())){
+					x = (float) (tempObject.getX() + tempObject.getBounds().getWidth());
+				}
 			}
 		}
 	}
@@ -74,7 +72,7 @@ public class Player extends GameObject{
 		g.fillRect((int)x, (int) y,(int) width, (int) height);
 		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.red);
-		g2d.draw(getBounds());
+		//g2d.draw(getBounds());
 		//g2d.draw(getBoundsRight());
 		//g2d.draw(getBoundsLeft());
 		//g2d.draw(getBoundsTop());
@@ -82,7 +80,7 @@ public class Player extends GameObject{
 
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
-		return new Rectangle ((int) x, (int)y,(int) width, (int) height);
+		return new Rectangle ((int) ((int)x+(width/2) - (width/4)), (int) ((int)y + (height/2)), (int)width/2, (int) height/2);
 	}
 	public Rectangle getBoundsTop() {
 		// TODO Auto-generated method stub
@@ -94,6 +92,6 @@ public class Player extends GameObject{
 	}
 	public Rectangle getBoundsLeft() {
 		// TODO Auto-generated method stub
-		return new Rectangle ((int)x, (int) y,(int) 5, (int) height-10);
+		return new Rectangle ((int)x, (int) y + 5,(int) 5, (int) height-10);
 	}
 }
