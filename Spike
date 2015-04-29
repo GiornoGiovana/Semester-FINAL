@@ -1,0 +1,44 @@
+import java.awt.*;
+import java.util.LinkedList;
+
+
+public class Spike extends GameObject {
+
+	public Spike(float x, float y, ObjectId id){
+		super(x,y,id);
+	}
+	public Spike(String dir, float x, float y, ObjectId id) {
+		super(dir, x, y, id);
+	}
+	public void tick(LinkedList<GameObject> object) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.red);
+		int x = (int) this.x;
+		int y = (int) this.y;
+		if(this.direction == "up")
+			g.drawPolygon(new int[] {x, (x+16), (x+32)},new int[] {(y+32), y, (y+32)}, 3);
+		if(this.direction == "down")
+			g.drawPolygon(new int[] {x, (x+16), (x+32)},new int[] {y, (y+32), y}, 3);
+		if(this.direction == "left")
+			g.drawPolygon(new int[] {x, (x+32), (x+32)},new int[] {(y+16), y, (y+32)}, 3);
+		if(this.direction == "right")
+			g.drawPolygon(new int[] {x, (x+32), x},new int[] {y, (y+16), (y+32)}, 3);
+	}
+	//see if the rectangle intersects with the segments that make the triangle. not 
+	//the whole object
+	public Polygon getPolyBounds() {
+		// TODO Auto-generated method stub
+		int x = (int) this.x;
+		int y = (int) this.y;
+		return new Polygon(new int[] {x, (x+16), (x+32)},new int[] {y+32, y, y+32}, 3);
+	}
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
