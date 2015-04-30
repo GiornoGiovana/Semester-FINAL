@@ -14,17 +14,18 @@ public class Game extends Canvas implements Runnable{
 	private BufferedImage level = null;
 	Handler handler;
 	Camera cam;
-	
+	static Texture texture;
+
 	private void init(){
 		WIDTH = getWidth();
 		HEIGHT = getHeight();
+		texture = new Texture();
 		BufferedImageLoader loader =new BufferedImageLoader();
-		//level = loader.loadImage("/level.png");
+		level = loader.loadImage("LevelDemo.png");
 		handler = new Handler();
 		cam = new Camera(0,0);
-		//loadImage(level);
+		loadImageLevel(level);
 		handler.addObject(new Player(100,100, handler, ObjectId.Player));
-		handler.createLevel();
 		this.addKeyListener(new KeyInput(handler));
 	}
 	public synchronized void start(){
@@ -69,7 +70,7 @@ public class Game extends Canvas implements Runnable{
 		for(int i = 0; i < handler.object.size(); i++){
 			if(handler.object.get(i).getId() == ObjectId.Player){
 				cam.tick(handler.object.get(i));
-					
+
 			}
 		}
 	}
@@ -81,33 +82,39 @@ public class Game extends Canvas implements Runnable{
 		}
 		Graphics g = bs.getDrawGraphics();
 		Graphics2D g2d = (Graphics2D) g;
-		g.setColor(Color.white);
+		g.setColor(Color.black);
 		g.fillRect(0,0,getWidth(), getHeight());
 		g2d.translate(cam.getX(),cam.getY());
 		handler.render(g);
 		g2d.translate(-cam.getX(),-cam.getY());
 		g.dispose();
 		bs.show();
-		
+
 	}
-	
-	private void loadImage(BufferedImage image){
+
+	private void loadImageLevel(BufferedImage image){
 		int w = image.getWidth();
 		int h = image.getHeight();
-		for(int i = 0; i < h; i++){
-			for(int ii = 0; ii < w; ii++){
-				int pixel = image.getRGB(i, ii);
+		for(int xx = 0; xx < h; xx++){
+			for(int yy = 0; yy < w; yy++){
+				int pixel = image.getRGB(xx, yy);
 				int red = (pixel >> 16) & 0xff;
 				int green = (pixel >> 8) & 0xff;
 				int blue = (pixel) & 0xff;
 				if(red == 255 && green == 255 && blue == 255){
-					handler.addObject(new Block(i*32, ii*32, ObjectId.Block));
+					handler.addObject(new Block(xx*32, yy*32,0, ObjectId.Block));
+				}
+				if(red == 128 && green == 128 && blue == 128){
+					handler.addObject(new Block(xx*32, yy*32, 1, ObjectId.Block));
 				}
 				if(red == 0 && green == 0 && blue == 255){
-					handler.addObject(new Player(i*32, ii*32, handler,ObjectId.Player));
+					handler.addObject(new Player(xx*32, yy*32, handler,ObjectId.Player));
 				}
 			}
 		}
+	}
+	public static Texture getInstance(){
+		return texture;
 	}
 	public static void main(String args[]){
 		new Window(800, 800, "Platformer", new Game());
