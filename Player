@@ -9,11 +9,13 @@ public class Player extends GameObject{
 
 	private float width = 32, height = 64;
 
-	private float gravity = .4f;
+	private float gravity = .6f;
 
 	private final float MAX_SPEED = 10;
 
 	private Handler handler;
+	
+	Texture texture = Game.getInstance();
 
 	public Player(float x, float y, Handler handler,  ObjectId id){
 		super(x, y, id);
@@ -73,13 +75,8 @@ public class Player extends GameObject{
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.blue);
+		//g.drawImage(texture.player[0], (int)x, (int)y,48, 64 ,null);
 		g.fillRect((int)x, (int) y,(int) width, (int) height);
-		Graphics2D g2d = (Graphics2D) g;
-		g.setColor(Color.red);
-		//g2d.draw(getBounds());
-		//g2d.draw(getBoundsRight());
-		//g2d.draw(getBoundsLeft());
-		//g2d.draw(getBoundsTop());
 	}
 
 	public Rectangle getBounds() {
