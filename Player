@@ -75,10 +75,10 @@ public class Player extends GameObject{
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.blue);
-		//g.drawImage(texture.player[0], (int)x, (int)y,48, 64 ,null);
+		//g.drawImage(texture.player[0], (int)x, (int)y,(int) width, (int) height ,null);
 		g.fillRect((int)x, (int) y,(int) width, (int) height);
+		
 	}
-
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
 		return new Rectangle ((int) ((int)x+(width/2) - (width/4)), (int) ((int)y + (height/2)), (int)width/2, (int) height/2);
