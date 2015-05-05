@@ -6,12 +6,12 @@ public class Texture {
 	private BufferedImage blockS = null;
 	private BufferedImage playerS = null;
 	public BufferedImage[] block = new BufferedImage[2];
-	public BufferedImage[] player = new BufferedImage[1];
+	public BufferedImage[] player = new BufferedImage[14];
 	public Texture(){
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try{
-			blockS = loader.loadImage("/tiles.jpg");
-			playerS = loader.loadImage("zero.gif");
+			blockS = loader.loadImage("/spriteSheet.png");
+			playerS = loader.loadImage("ms.png");
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -21,8 +21,11 @@ public class Texture {
 		getTextures();
 	}
 	private void getTextures(){
-		block[0] = b.grabImage(1, 5, 32, 32);
+		block[0] = b.grabImage(1,1, 32, 32);
 		block[1] = b.grabImage(2, 6, 32, 32);
-		player[0] = p.grabImage(1, 1, 32, 32);
+		player[0] = p.grabImage(1, 1, 32,64);
+		player[1] = p.grabImage(2, 1, 32,64);
+		player[2] = p.grabImage(3, 1, 32,64);
+		player[3] = p.grabImage(4, 1, 32,64);
 	}
 }
