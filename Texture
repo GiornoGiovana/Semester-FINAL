@@ -2,22 +2,26 @@ import java.awt.image.BufferedImage;
 
 
 public class Texture {
-	SpriteSheet b, p;
+	SpriteSheet b, p, r;
 	private BufferedImage blockS = null;
 	private BufferedImage playerS = null;
+	private BufferedImage rplayerS = null;
 	public BufferedImage[] block = new BufferedImage[2];
-	public BufferedImage[] player = new BufferedImage[14];
+	public BufferedImage[] player = new BufferedImage[5];
+	public BufferedImage[] rplayer = new BufferedImage[5];
 	public Texture(){
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try{
 			blockS = loader.loadImage("/spriteSheet.png");
 			playerS = loader.loadImage("ms.png");
+			rplayerS = loader.loadImage("msr.png");
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}          
 		b = new SpriteSheet(blockS);
 		p = new SpriteSheet(playerS);
+		r = new SpriteSheet(rplayerS);
 		getTextures();
 	}
 	private void getTextures(){
@@ -27,5 +31,11 @@ public class Texture {
 		player[1] = p.grabImage(2, 1, 32,64);
 		player[2] = p.grabImage(3, 1, 32,64);
 		player[3] = p.grabImage(4, 1, 32,64);
+		player[4] = p.grabImage(21, 1, 32,64);
+		rplayer[0] = r.grabImage(21, 1, 32, 64);
+		rplayer[1] = r.grabImage(20,1,32,64);
+		rplayer[2] = r.grabImage(19,1,32,64);
+		rplayer[3] = r.grabImage(18,1,32,64);
+		rplayer[4] = r.grabImage(1, 1, 32, 64);
 	}
 }
