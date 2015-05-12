@@ -1,5 +1,5 @@
 import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.LinkedList;
 
 
@@ -9,8 +9,15 @@ public abstract class GameObject {
 	protected float velX = 0, velY = 0;
 	protected boolean falling = true;
 	protected boolean jumping = false;
+	protected String direction = "";
 
 	public GameObject(float x, float y, ObjectId id){
+		this.x = x;
+		this.y = y;
+		this.id = id;
+	}
+	public GameObject(String direction, float x, float y, ObjectId id){
+		this.direction = direction;
 		this.x = x;
 		this.y = y;
 		this.id = id;
@@ -18,6 +25,7 @@ public abstract class GameObject {
 	public abstract void tick(LinkedList<GameObject> object);
 	public abstract void render(Graphics g);
 	public abstract Rectangle getBounds();
+	public abstract Polygon getPolyBounds();
 	public float getX(){
 		return x;
 	}
