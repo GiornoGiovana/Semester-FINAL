@@ -24,10 +24,8 @@ public class Game extends Canvas implements Runnable{
 		handler = new Handler(cam);
 		BufferedImageLoader loader =new BufferedImageLoader();
 		level = loader.loadImage("LevelDemo2.png");
-		//bg = loader.loadImage("/EGYPT.png");
 		cam = new Camera(0,0);
 		handler.loadImageLevel(level);
-		//handler.addObject(new Player(100,100, handler, ObjectId.Player));
 		this.addKeyListener(new KeyInput(handler));
 	}
 	public synchronized void start(){
