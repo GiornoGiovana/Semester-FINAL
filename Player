@@ -7,7 +7,7 @@ public class Player extends GameObject{
 
 	private float width = 32, height = 64;
 
-	private float gravity = .8f;
+	private float gravity = 1f;
 
 	private final float MAX_SPEED = 10;
 	private int facing = 1;
@@ -23,8 +23,8 @@ public class Player extends GameObject{
 		DeathX = this.x;
 		DeathY = this.y;
 		this.handler = handler;
-		playerRight = new Animation(5,texture.player[1], texture.player[2],texture.player[3]);
-		playerLeft = new Animation(5, texture.rplayer[1], texture.rplayer[2], texture.rplayer[3]);
+		playerRight = new Animation(5,texture.player[1], texture.player[2]);
+		playerLeft = new Animation(5, texture.player[3], texture.player[4]);
 	}
 
 	public void tick(LinkedList<GameObject> object) {
@@ -78,8 +78,7 @@ public class Player extends GameObject{
 			}
 			else if(tempObject.getId() == ObjectId.Finish){
 				if(getBounds().intersects(tempObject.getBounds())){
-					handler.clearLevel();
-					cam = new Camera(0,0);
+					handler.switchLevel();
 				}
 			}
 			if(tempObject.getId() == ObjectId.Spike){
@@ -92,7 +91,7 @@ public class Player extends GameObject{
 					falling = false;
 					jumping = false;
 					death = true;
-					
+
 				}
 				if(getBounds().intersectsLine(l2)){
 					falling = false;
@@ -164,13 +163,7 @@ public class Player extends GameObject{
 			death = false;
 		}
 		if(jumping){
-			if(velX >= 0){
-				g.drawImage(texture.player[4],(int)x,(int)y, (int)32, (int)64, null);
-			}
-			else{
-				facing = 0;
-				g.drawImage(texture.rplayer[4],(int)x,(int)y,(int)32,(int)64,null);
-			}
+			g.drawImage(texture.player[0],(int)x,(int)y, (int)32, (int)64, null);
 		}
 		else{
 			if (velX !=0){
@@ -185,12 +178,7 @@ public class Player extends GameObject{
 				}
 			}
 			if(velX == 0){
-				if(facing == 1){
-					g.drawImage(texture.player[0],(int)x,(int)y, (int)32, (int)64, null);
-				}
-				else{
-					g.drawImage(texture.rplayer[0],(int)x,(int)y, (int)32, (int)64, null);
-				}
+				g.drawImage(texture.player[0],(int)x,(int)y, (int)32, (int)64, null);
 			}
 		}
 		//g.drawImage(texture.player[0], (int)x, (int)y,(int) width, (int) height ,null);
