@@ -1,1 +1,12 @@
+global int happiness = 100;
+global int wealth = 0;
+global int grades;
+global final int MAXCREDITHOURS;
+global int weekly_hoursWorked; //max is 40
+global int weekly_creditHours; //cant be higher than MAXCREDITHOURS
+global int weekly_leisure; //max is 90
+global int weekly_hoursSleeping;
+//TODO add more
+ void setup(){
 
+ }
