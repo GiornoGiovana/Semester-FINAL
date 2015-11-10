@@ -2,11 +2,18 @@ global int happiness = 100;
 global int wealth = 0;
 global int grades;
 global final int MAXCREDITHOURS;
+global int happinessPotential[] = new int[14]; //starts at 50%, cant go above 100 or below 0. each index is a week, average all elements at the end for final happiness.
+global int wealthPotential[] = new int[14]; //starts at $0,cumulative between weeks, so add all values at the end. At the conclusion of the game, if Grades is >= 85% and Happiness is >= 85%, Wealth potential increases by $62501 *(creditHours/12.0)
+global int gradePotential[] = new int[14]; //since we need to average the grade potential at the end of each week, store each weeks grade potential in this array, starting with week 0
 global int weekly_hoursWorked; //max is 40
 global int weekly_creditHours; //cant be higher than MAXCREDITHOURS
 global int weekly_leisure; //max is 90
-global int weekly_hoursSleeping;
-//TODO add more
+global int weekly_hoursSleeping; //min 8, max 95
+global int weekly_hoursStudying;
+global int weekly_hoursVisitingAcademicResources; //Grades increase by 3% per hour spent; For every 2 hours, randomly increase or decrease Happiness by 2%, with a 50% probability of either case 
+global int weekly_attentionInClas; //percent of time spent actively engaged in class
+
+
  void setup(){
 
  }
