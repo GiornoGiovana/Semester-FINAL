@@ -1,0 +1,3 @@
+void attendance(){
+  gradePotential[week] = (5 * (hours_inClass - weekly_creditHours)) + .1  * hours_inClass;
+}
