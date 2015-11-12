@@ -8,6 +8,7 @@ int wealth = 0;
   int weekly_hoursWorked; //max is 40
   int weekly_creditHours; //cant be higher than MAXCREDITHOURS
   int weekly_leisure; //max is 90
+  int weekly_groupStudyHours
   int weekly_hoursSleeping; //min 8, max 95
   int weekly_hoursStudying; //min 0, max 72
   int weekly_hoursVisitingAcademicResources; //Grades increase by 3% per hour spent; For every 2 hours, randomly increase or decrease Happiness by 2%, with a 50% probability of either case 
