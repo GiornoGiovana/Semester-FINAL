@@ -1,0 +1,17 @@
+void sleep(){
+  if(weekly_hoursSleeping < 28){
+    happinessPotential[week] *= .75;
+    wealthPotential[week] *= .75;
+    gradePotential[week] *= .75;
+  }
+  if (weekly_hoursSleeping >=35 && weekly_hoursSleeping <=63){
+    happinessPotential[week] += 5;
+    if (weekly_hoursSleeping>=42 && weekly_hoursSleeping < 49){
+      happinessPotential[week] +=5;
+    } else if (weekly_hoursSleeping >=49 && weekly_hoursSleeping <56){
+      happinessPotential[week] += 10;
+    } else if (weekly_hoursSleeping >=56){
+      happinessPotential[week] += 15;
+    }
+  }
+}
