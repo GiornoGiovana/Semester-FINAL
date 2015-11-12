@@ -1,0 +1,8 @@
+void groupStudy(){
+ happinessPotential[week] += 5*weekly_groupStudyHours;
+ if (math.random(-1,1)>0){
+   gradePotential[week] += 2*weekly_groupStudyHours ;
+ }else{
+   gradePotential[week] -= 2*weekly_groupStudyHours ;
+ }
+}
