@@ -1,5 +1,5 @@
->SP2 Demo
->Team Bohemian Rhapsody
+>SP2 Demo PDF
+>Team Bohemian Rhapsody: Jacob Mathew, Jack Allen, Chris Delen, Young Lee
 
 	Our project will use sliders as a form of input. 
 	Users will move the sliders to change the value of different variables in order to choose how much time they spend 
@@ -16,20 +16,17 @@
 
 >How does our system work?
 	Our system uses a series of sliders to select number of hours per activity. This information will be selected every
-	week for 15 weeks. We will also have the ablitiy to do quick game where the input for one week is the same for all 
-	15 weeks. After the user inputs the numbers for each category, the user will push "next". Once the user pushes this
+	week for 15 weeks. After the user inputs the numbers for each category, the user will push "next". Once the user pushes this
 	button, a screen will appear with the level of happiness, grades, and wealth.
-
-//TODO
-
 
 
 How does our system differs from the original design?
 	Instead of using a picture where you can click on it and a pop up box is dispayed to input a number, we are going to 
-	use sliders to select the number of hours per activity.
+	use sliders to select the number of hours per activity. We 
 
-//TODO
+
 
 >What enhancements do we plan to make?
+	We will also have the ablitiy to do quick game where the input for one week is the same for all 
+	15 weeks.
 
-//TODO
