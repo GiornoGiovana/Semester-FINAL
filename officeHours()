@@ -1,0 +1,9 @@
+void officeHours(){
+  gradePotential[week] += 3 * weekly_hoursVisitingAcademicResources;
+  for( int x = weekly_hoursVisitingAcademicResources/2; x--){
+   if (random(0,2) >=2){
+    potentialHappiness[week] +=2;
+   else
+    potentialHappiness[week] -=2; 
+  }
+}
