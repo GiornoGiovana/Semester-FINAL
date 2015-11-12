@@ -1,0 +1,8 @@
+void  leisure(int week){
+  if (weekly_leisure <40)
+  happinessPotential[week] += (2.5 * weekly_leisure);
+  else if (weekly_leisure >=40){
+  happinessPotential[week] -= (2.5 * weekly_leisure);
+  gradePotential[week] -= weekly_leisure;
+  }
+}
