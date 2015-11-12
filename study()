@@ -1,0 +1,7 @@
+void study() {
+  gradePotential[week] += pow(1.08, weekly_hoursStudying);
+  if (weekly_hoursStudying > 35) {
+    happinessPotential[week] -= 5*(weekly_hoursStudying-35);
+    gradePotential[week] += pow(.5, 35-weekly_hoursStudying);
+  }
+}
