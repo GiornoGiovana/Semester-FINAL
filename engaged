@@ -1,0 +1,6 @@
+void engaged(){
+  if(weekly_attentionInClas < 80){
+    gradePotential[week] -= 2*(weekly_creditHours - (weekly_attentionInClas * weekly_creditHours));
+    happinessPotential[week] += 2*(weekly_creditHours - (weekly_attentionInClas * weekly_creditHours));
+  }
+}
