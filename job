@@ -1,0 +1,8 @@
+void job(){
+   int hour = weekly_hoursWorked;
+   wealth+= hour * 7;
+   wealthPotential[week] = wealth;
+   if(weekly_hoursWorked > 12){
+     gradePotential[week] -= weekly_hoursWorked * .5;
+   }
+}
