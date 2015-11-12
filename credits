@@ -1,0 +1,14 @@
+ void credits(){
+   int difference;
+   if(weekly_creditHours > 12){
+     if(weekly_creditHours >= 16 && weekly_creditHours < 20){
+       happinessPotential[week] -= 5;
+     }else if(weekly_creditHours >= 20 && weekly_creditHours < 24){
+       happinessPotential[week] -= 10;
+     }else if(weekly_creditHours == 24){
+        happinessPotential[week] -= 15; 
+     }
+     difference = weekly_creditHours - 12;
+     gradePotential[week] -= difference * 1.5;
+   }
+ }
