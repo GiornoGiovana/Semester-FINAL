@@ -1,4 +1,4 @@
- void credits(){
+ void credits(){ //Young Lee. Calculated credit hours and for every 4 credits happiness potential goes down by 5%.
    int difference;
    if(weekly_creditHours > 12){
      if(weekly_creditHours >= 16 && weekly_creditHours < 20){
