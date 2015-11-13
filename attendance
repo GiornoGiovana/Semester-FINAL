@@ -1,3 +1,3 @@
-void attendance(){
+void attendance(){ //Young Lee. Gradepotential is based on a formula determiend by hours in class and weekly credit hours.
   gradePotential[week] = (5 * (hours_inClass - weekly_creditHours)) + .1  * hours_inClass;
 }
