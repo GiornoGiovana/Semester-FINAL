@@ -1,4 +1,4 @@
-void engaged(){
+void engaged(){ // Young Lee. As long as weekly attention in class is less than 80, then gradepotential and happiness potential is added/subtracted by that formula
   if(weekly_attentionInClas < 80){
     gradePotential[week] -= 2*(weekly_creditHours - (weekly_attentionInClas * weekly_creditHours));
     happinessPotential[week] += 2*(weekly_creditHours - (weekly_attentionInClas * weekly_creditHours));
