@@ -1,0 +1,18 @@
+# Semester-FINAL
+*/
+int week;  //The week so far out of 15
+int happiness;
+double gradePotential;
+int wealth;
+final int   Max Hours in Week = 168; // this is amount of hours in a week
+final int   Max Hours of Credits = 24; // this is the max number of credit hours allowed to take
+final int   Max Hours of Work = 40; // this is max number of hours allowed to work per week
+final int   Max Percentage Engaged in Class = 90; // this is max percent of time attentive in class
+final int   Max Hours in Class = 24; // this is max hours spent actually in class
+final int   Max Hours spent working on assignments = 72; // this is amount og hours spent working on assignments/studying 
+final int   Max hours in study groups = 48; // this is max hours allowed to spend in study groups
+final int   Max hours using academic resources = 12; // this is max amount of time allowed using academic resources
+final int   Max hours on self care = 95; // this max hours allowed to spend on self, sleeping
+final int   Max hours on leisure activity = 90; // this is max hours allowed to spend on liesure activity
+// This part of code completed by Jacob Mathew
+/*
