@@ -1,4 +1,4 @@
-void job(){
+void job(){ //Young Lee. Calculated job based off the rubric. wealth is added based on total hours times 7. if the horus worked is greater than 12, then grade potential is subtracted by weekly_hoursworked  times .5%.
    int hour = weekly_hoursWorked;
    wealth+= hour * 7;
    wealthPotential[week] = wealth;
