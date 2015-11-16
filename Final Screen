@@ -1,0 +1,18 @@
+void setup(){
+  int happniessFinal,happinessSum, WealthFinal, gradesFinal,gradesSum;
+  size(1050,600);
+  for (int i = 0; i<=15; i++){
+    WealthFinal += wealthPotential[i];
+    happinessSum += happinessPotential[i];
+    gradesSum += gradePotential[i];
+  }
+  happinessFinal = happinessSum/15;
+  gradesFinal = gradesSum/15;
+ background(0);
+ textSize(32);
+ text("The semester is over, here are your stats",200,100);
+ textSize(16);
+ text("Your Final Happiness Is: " + happinessFinal,200,200);
+ text("Your Final Wealth Is: " + happinessFinal,200,300);
+ text("Your Final Grade Is: " + happinessFinal,200,400);
+}
