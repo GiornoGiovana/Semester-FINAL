@@ -1,6 +1,5 @@
-void setup(){
+void finalScreen(){
   int happniessFinal,happinessSum, WealthFinal, gradesFinal,gradesSum;
-  size(1050,600);
   for (int i = 0; i<=15; i++){
     WealthFinal += wealthPotential[i];
     happinessSum += happinessPotential[i];
